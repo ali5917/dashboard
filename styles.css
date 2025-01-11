@@ -1,0 +1,319 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    transition: all ease 0.3s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template-areas: 
+    "sidebar head-area"
+    "sidebar content-area"
+    ;
+}
+
+.sidebar {
+    height: 100%;
+    background-color: black;
+    grid-area: sidebar;
+    display: grid;
+    color: white;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+    "sidebar-head"
+    "sidebar-nav"
+    "sidebar-branding";
+    row-gap: 3em;
+    padding: 1em;
+}
+
+.sidebar-head {
+    grid-area: sidebar-head;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1em;
+    font-size: 20px;
+}
+
+.sidebar-nav {
+    grid-area: sidebar-nav;
+    display: grid;
+    row-gap: 1em;
+}
+
+.sidebar-branding {
+    grid-area: sidebar-branding;
+    display: grid;
+    row-gap: 1em;
+    align-content: start;
+}
+
+.nav-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1em;
+    font-size: 15px;
+}
+
+.nav-item p:hover {
+    cursor: pointer;
+}
+
+.sidebar-head svg {
+    fill: white;
+    width: 40px;
+}
+
+.sidebar-nav svg, .sidebar-branding svg {
+    fill: white;
+    width: 25px;
+}
+
+.head-container {
+    grid-area: head-area;
+    display: grid;
+    grid-template: 1fr 2fr / 2fr 1fr;
+    grid-template-areas: 
+    "search notif"
+    "greet btns";
+    padding: 1em 3em;
+    row-gap: 1.5em;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.search {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-content: center;
+    gap: 1em;
+
+}
+
+.search > svg {
+    width: 30px;
+}
+
+.search input {
+    padding: 1px 1em;
+    border: none;
+    border-radius: 30px;
+    background-color: #E2E8F0;
+}
+
+.search input:focus {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.notif {
+    grid-area: notif;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    justify-items: end;
+    align-items: center;     
+    column-gap: 1.5em;
+}
+
+.notif svg {
+    width: 20px;
+}
+
+.notif img {
+    width: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.notif a {
+    font-weight: bold;
+}
+
+
+.greet {
+    grid-area: greet;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.5em;
+    align-items: center;    
+}
+
+.greet h1 {
+    font-size: 25px;
+}
+
+.greet p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.greet img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.btns {
+    grid-area: btns;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2em;
+    align-items: center;
+}
+
+.btns button {
+    border: none;
+    background-color: black;
+    border: solid 2px black;
+    color: white;
+    padding: 10px 3em;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.btns button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    border: solid 2px black;
+}
+
+.content-container {
+    background-color: rgb(239, 239, 239);
+    grid-area: content-area;
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    padding: 1em 2em;
+    column-gap: 1em;
+}
+
+.projects {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 1em;
+}
+
+.projects .head {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sub-projects {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+}
+
+.project-div {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    padding: 1em 1em;
+    border-left: 10px solid black;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.8);
+    transition: all ease 0.5s;
+}
+
+.project-div:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.project-div > .text > h6 {
+    font-size: 16px;
+    line-height: 200%;
+}
+
+.project-div > .text > p {
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;   
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.icons svg {
+    width: 20px;
+}
+
+.misc {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    /* align-content: space-between; */
+    row-gap: 1em;
+}
+
+.misc .head {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.announce, .trending {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 1em;
+}
+
+.material.one {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr auto 1fr;
+    row-gap: 0.5em;
+    padding: 1em 2em;
+    background-color: white;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.material h6 {
+    font-size: 14px;
+}
+
+.material p {
+    font-size: 13px;
+}
+
+.material.two {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 1em;
+    padding: 1em 2em;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.material.two > div{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.material.two .text {
+    font-size: 16px;
+}
+
+.material.two img {
+    width: 50px;
+    border-radius: 50%;
+}
